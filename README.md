@@ -1,3 +1,7 @@
+Site is live at https://michalwojcik4.github.io/goit-js-hw-11/
+
+
+
 # Parcel template
 
 Этот проект был создан при помощи Parcel. Для знакомства и настройки
