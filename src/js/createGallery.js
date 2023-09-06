@@ -1,7 +1,9 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const gallery = document.querySelector('.gallery');
 
 export function createGallery(photos) {
-  gallery.innerHTML = '';
   const hits = photos.hits
     .map(
       ({
@@ -14,24 +16,26 @@ export function createGallery(photos) {
         downloads,
       }) => {
         return `<div class="photo-card">
+            <a href="${largeImageURL}"> 
             <img src="${webformatURL}" alt="${tags}" loading="lazy" />
+            </a>
             <div class="info">
-                <p class="info-item">
+                <div class="info-item">
                     <b>Likes</b>
                     <p>${likes}</p>
-                </p>
-                <p class="info-item">
+                </div>
+                <div class="info-item">
                     <b>Views</b>
                     <p>${views}</p>
-                </p>
-                <p class="info-item">
+                </div>
+                <div class="info-item">
                     <b>Comments</b>
                     <p>${comments}</p>
-                </p>
-                <p class="info-item">
+                </div>
+                <div class="info-item">
                     <b>Downloads</b>
                     <p>${downloads}</p>
-                </p>
+                </div>
             </div>
       </div>`;
       }
@@ -39,4 +43,7 @@ export function createGallery(photos) {
     .join('');
 
   gallery.insertAdjacentHTML('beforeend', hits);
-};
+
+  const lightbox = new SimpleLightbox('.photo-card a', { overlayOpacity: 0.8 });
+  lightbox.refresh();
+}

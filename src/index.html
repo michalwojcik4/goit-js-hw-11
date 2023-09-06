@@ -8,22 +8,24 @@
     <title>goit-js-hw-11</title>
   </head>
   <body>
-    <div class='search'>
+    <div class="search">
       <form class="search__form" id="search-form">
         <input
           class="search__input"
           type="text"
-          value="cat"
           name="searchQuery"
           autocomplete="off"
           placeholder="Search images..."
         />
-        <button class="search__btn" type="submit"><svg><use
-          href="./svg/symbol-defs.svg#icon-search"
-        ></use></svg></button>
+        <button class="search__btn" type="submit">
+          <svg><use href="./svg/symbol-defs.svg#icon-search"></use></svg>
+        </button>
       </form>
     </div>
 
     <div class="gallery"></div>
+    <button type="button" class="load-more" hidden="hidden">
+      Load more...
+    </button>
   </body>
 </html>
