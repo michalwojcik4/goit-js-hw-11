@@ -1,4 +1,4 @@
-import { loadMore, searchImages } from './hendler';
+import { loadMore, searchImages } from './handler';
 
 const searchForm = document.querySelector('#search-form');
 const loadMoreBtn = document.querySelector('.load-more');
